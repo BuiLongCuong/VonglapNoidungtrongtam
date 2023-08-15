@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bài 1: Viết chương trình nhập một số nguyên,tìm 20 bội số của số đó, sau đó in kết quả ra màn hình. </h1>
+<button onclick="bai1()">In</button>
+<script>
+    function bai1() {
+        let a = +prompt("Nhập 1 số nguyên :");
+        let demboi = 0;
+        for (let i = 1; true; i++) {
+            if (i % a === 0) {
+                demboi += 1;
+                document.write(i + "<br>");
+            }
+            if (demboi === 20) {
+                break;
+            }
+        }
+    }
+</script>
+<h1>Bài 2: Viết chương trình nhập một câu bất kỳ, đếm số từ và ký tự trong câu đó, và in kết quả ra màn hình. </h1>
+<button onclick="bai2()">In</button>
+<script>
+    // function bai2() {
+    //     let cau = prompt("Nhập 1 câu bất kỳ:")
+    //     document.write("Số kí tự: " + cau.length + ",");
+    //     let words = cau.split(' '); // Tách câu thành mảng các từ
+    //     let wordCount = words.length; // Đếm số từ trong mảng
+    //     document.write("Số từ: " + wordCount);
+    // }
+    function bai2() {
+        let string=prompt("Nhập từ :")
+        let countchar=0;
+        let countword=1;
+        for (let i = 0; i < string.length; i++) {
+            countchar+=1;
+            if(string[i]===" "){
+                countword++;
+            }
+        }alert(`Số kí tự là : ${countchar} và số từ là :${countword}`)
+    }
+</script>
+<h1>Bài 3: Nhập số nguyên n bất kỳ, viết chương trình in các phần tử đầu tiên của dãy Fibonacci từ 0 đến n.</h1>
+<button onclick="bai3()">In</button>
+<script>
+    function bai3() {
+        let n = +prompt("Nhập 1 số nguyên:");
+        let a = 0;
+        let b = 1;
+        let sotieptheo = 0;
+        for (let i = 0; i <= n; i++) {
+            document.write(a + "<br>")
+            sotieptheo = a + b;
+            a = b;
+            b = sotieptheo;
+        }
+    }
+</script>
+<h1>Bài 4: Nhập số nguyên n. Tính giá trị biểu thức S= 1.2 + 2.3 + 3.4 + ... + n(n+1).</h1>
+<button onclick="bai4()">Tính</button>
+<script>
+    function bai4() {
+        let n = +prompt("Nhập 1 số nguyên :")
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum += i * (i+1);
+        }
+        document.write(sum);
+    }
+</script>
+<h1>Bài 5: Nhập vào n: Viết chương trình tính kết quả biểu thức S= 1+1/2^3+1/3^3+...+1/n^3</h1>
+<button onclick="bai5()">Tính</button>
+<script>
+    function bai5() {
+        let n = +prompt("Nhập 1 số nguyên:");
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum += 1 / (Math.pow(i,3));
+        }
+        document.write(sum);
+    }
+</script>
+<h1>Bài 6: Nhập vào hai số nguyên dương a và b. Tìm tổng của tất cả các số lẻ và chẵn nằm giữa hai số đó.</h1>
+<button onclick="bai6()">Tính</button>
+<script>
+    function bai6() {
+        let a=+prompt("Nhập số nguyên dương a:")
+        let b=+prompt("Nhập số nguyên dương b:")
+        let luuchan=0;
+        let luule=0;
+        let c;
+        let d;
+        for (let i = a; i <=b ; i++) {
+            if(i%2===0){
+                luuchan+=i
+                c=eval(luuchan)
+            }else{
+                luule+=i
+                d=eval(luule)
+            }
+        }document.write("Tổng các số chẵn nằm giữa hai số "+a +" và "+b+" là : "+luuchan+"<br>")
+         document.write("Tổng các số lẻ nằm giữa hai số "+a +" và "+b+" là : "+luule)
+    }
+</script>
+</body>
+</html>
